@@ -1134,7 +1134,7 @@ async function createHero(canvas, host, onProgress) {
     camera.aspect = W / H;
     layoutMode = W >= 1024 ? "desktop" : W >= 640 ? "tablet" : "mobile";
     const visW = 2 * Math.tan(15 * DEG) * 15 * camera.aspect;
-    const want = layoutMode === "desktop" ? (W >= 1280 ? 0.5 : 0.4) : layoutMode === "tablet" ? 0.78 : 0.98;
+    const want = layoutMode === "desktop" ? (W >= 1280 ? 0.5 : 0.4) : layoutMode === "tablet" ? 0.78 : 0.92;
     baseScale = clamp((want * visW) / 8.6, 0.32, 1.05);
   }
 
@@ -1226,7 +1226,7 @@ async function createHero(canvas, host, onProgress) {
     let sx = 0, sy = 0;
     if (layoutMode === "desktop") { const wide = W >= 1280; sx = lerp(lerp(wide ? 0.2 : 0.27, -0.17, a), wide ? 0.18 : 0.25, b); sy = 0.02; }
     else if (layoutMode === "tablet") { sx = 0.04; sy = 0.17; }
-    else { sx = 0; sy = 0.21; }
+    else { sx = 0; sy = 0.31; }
     camera.setViewOffset(W, H, -sx * W, -sy * H, W, H);
     camera.updateProjectionMatrix();
     return out;

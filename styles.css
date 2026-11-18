@@ -61,7 +61,7 @@
 
 /* ── Base ─────────────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; overflow-x: clip; max-width: 100%; }
 body {
   margin: 0;
   background: var(--white);
@@ -241,6 +241,7 @@ body::after {
 }
 .mega.is-open { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); transition: opacity 0.35s var(--ease-out), transform 0.45s var(--ease-out), visibility 0s; }
 @media (min-width: 1080px) { .mega { grid-template-columns: 1fr 300px; } }
+@media (max-width: 1023px) { .mega { display: none; } }
 .mega-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
 .mega-item { display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 16px; transition: background 0.25s; }
 .mega-item:hover { background: var(--blue-50); }
