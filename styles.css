@@ -453,8 +453,8 @@ body::after {
 .pcard-body { display: flex; flex-direction: column; flex: 1; }
 @media (max-width: 639px) {
   .pcard { min-height: 0; }
-  .pcard-media { flex: none; min-height: 0; height: 210px; }
-  .pcard-media img { width: auto; height: 100%; }
+  .pcard-media { flex: none; min-height: 0; height: 220px; grid-template-rows: 220px; overflow: hidden; }
+  .pcard-media img { width: 220px; height: 220px; max-width: 100%; max-height: 220px; aspect-ratio: auto; }
   .form-head { flex-wrap: wrap; }
   .form-head h3 { font-size: 23px; }
 }
@@ -683,3 +683,4 @@ fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
 .to-top { position: fixed; right: var(--gutter); bottom: 22px; z-index: 50; width: 48px; height: 48px; border-radius: 16px; display: grid; place-items: center; cursor: pointer; border: 1px solid var(--glass-border); background: var(--glass-bg); box-shadow: var(--glass-shadow); -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur); opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity 0.4s, transform 0.5s var(--ease-out); }
 .to-top.is-on { opacity: 1; transform: none; pointer-events: auto; }
 .to-top svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+@media (max-width: 639px) { .to-top { display: none; } }
